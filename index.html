@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ClassTeacher</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+</head>
+
+<body>
+    <h2>ROTATION PUZZLE</h2>
+     <div class="mainWrapper">
+ 
+    <div class="dropWrapper">
+       
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+    
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+    
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="1" class="drop disabled"></li>
+            <li data-id="1" class="drop disabled"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+      
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="1" class="drop disabled"></li>
+            <li data-id="1" class="drop disabled"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+       
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+       
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+            <li data-id="0" class="drop"></li>
+    </div>
+   
+    <div class="dragWrapper">
+       <div class="dragContainer" id="tShape">
+          <div class="drag tShapeDrag" style='transform: rotate(0deg);' data-rotate='0'>
+            <div class="tShapeDragFirst">
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+            </div>
+            <div class="tShapeDragLast">
+                <li class=""></li>
+            </div>
+          </div>
+          <div class="handleMotion">
+            <select class='rotateClock'>
+              <option value="1">ClockWise</option>
+              <option value="0">AntiClockWise</option>
+            </select>
+            <select class='rotateDeg'>
+              <option value="null">Select Angle</option>
+              <option value="90">90 Deg</option>
+              <option value="180">180 Deg</option>
+              <option value="270">270 Deg</option>
+              <option value="360">360 Deg</option>
+            </select>
+          </div>
+       </div>
+<br><br>
+      <div class="dragContainer" id="rectangleShape">
+          <div class="drag rectangleShapeDrag" style='transform: rotate(0deg);' data-rotate='0'>
+            <div class="rectangleShapeFirst">
+                <li class=""></li>
+                <li class=""></li> 
+                <li class=""></li> 
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+
+            </div>
+            <div class="rectangleShapeLast">
+                <li class=""></li>
+                <li class=""></li> 
+                <li class=""></li> 
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+            </div>
+          </div>
+          <div class="handleMotion">
+            <select class='rotateClock'>
+              <option value="1">ClockWise</option>
+              <option value="0">AntiClockWise</option>
+            </select>
+            <select class='rotateDeg'>
+              <option value="null">Select Angle</option>
+              <option value="90">90 Deg</option>
+              <option value="180">180 Deg</option>
+              <option value="270">270 Deg</option>
+              <option value="360">360 Deg</option>
+            </select>
+          </div>
+       </div>
+
+      
+      <div class="dragContainer" id="lShape">
+          <div class="drag lShapeDrag" style='transform: rotate(0deg);' data-rotate='0'>
+            <div class="lShapeFirst">
+                <li class=""></li>
+                <li class=""></li> 
+                <li class=""></li> 
+                <li class=""></li>
+                <li class=""></li>
+
+            </div>
+            <div class="lShapeLast">
+                <li class=""></li>
+            </div>
+          </div>
+          <div class="handleMotion">
+            <select class='rotateClock'>
+              <option value="1">ClockWise</option>
+              <option value="0">AntiClockWise</option>
+            </select>
+            <select class='rotateDeg'>
+              <option value="null">Select Angle</option>
+              <option value="90">90 Deg</option>
+              <option value="180">180 Deg</option>
+              <option value="270">270 Deg</option>
+              <option value="360">360 Deg</option>
+            </select>
+          </div>
+       </div>
+
+
+      
+      <div class="dragContainer" id="lineShape">
+          <div class="drag lineShapeDrag" style='transform: rotate(0deg);' data-rotate='0'>
+            <div class="lineShapeFirst">
+                <li class=""></li>
+                <li class=""></li> 
+                <li class=""></li> 
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+            </div>
+          </div>
+          <div class="handleMotion">
+            <select class='rotateClock'>
+              <option value="1">ClockWise</option>
+              <option value="0">AntiClockWise</option>
+            </select>
+            <select class='rotateDeg'>
+              <option value="null">Select Angle</option>
+              <option value="90">90 Deg</option>
+              <option value="180">180 Deg</option>
+              <option value="270">270 Deg</option>
+              <option value="360">360 Deg</option>
+            </select>
+          </div>
+       </div>
+
+<!--        <div class="dragContainer">
+        <div class="drag">
+            <div>
+                <li class=""></li>
+                <li class=""></li>
+            </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="data/data.js"></script>
+    <script type="text/javascript" src="js/enableDragMobile.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
