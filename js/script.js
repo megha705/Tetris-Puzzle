@@ -39,8 +39,9 @@ $(function() {
                 $(selectEachLi).addClass('filled').attr('data-id',1);
 
               })
-                    $(this).hide();
+                    // $(this).hide();
                     console.log("not working");
+                    console.log(ui.draggable)
                 }
               },500)
               console.log(dropLiPositions);
@@ -56,7 +57,43 @@ $(function() {
             // tolerance: "fit",
             // tolerance: 'intersect',
             drop: function(event, ui) {
-              console.log("drop is working fine", dropLiPositions);
+              // console.log("drop is working fine", dropLiPositions);
+
+               dropLiPositions = [];
+             // console.log(ui.draggable.children());
+              let liList = ui.helper.find('li');
+              let mainDiv = ui.helper.position();
+              console.log(ui.helper);
+              console.log("top :", mainDiv.top, "Left :", mainDiv.left);
+              $.each(liList, function(index, value){
+                let position = $(value).position();
+                let positionAxis = {
+                  'top':mainDiv.top + position.top,
+                  'left':mainDiv.left + position.left
+                }
+                dropLiPositions.push(positionAxis);
+              })
+              setTimeout(function(){
+                let itemToHighlightLenght = 0;
+                $.each(dropLiPositions, function(index, value){
+                let selectEachLi = document.elementFromPoint(dropLiPositions[index].left+10, dropLiPositions[index].top+10);
+                let dataId = $(selectEachLi).attr('data-id');
+                if(dataId  == 0){
+                     itemToHighlightLenght+=1;
+                } 
+              })
+                if(itemToHighlightLenght == dropLiPositions.length){
+                   $.each(dropLiPositions, function(index, value){
+                let selectEachLi = document.elementFromPoint(dropLiPositions[index].left+10, dropLiPositions[index].top+10);
+                $(selectEachLi).addClass('filled').attr('data-id',1);
+
+              })
+                    // $(this).hide();
+                    // console.log("not working");
+                    $(ui.draggable).fadeOut();
+                }
+              },500)
+              console.log(dropLiPositions);
             }
       }); 
 
@@ -70,15 +107,10 @@ $(function() {
   })
 
   $('.rotateDeg').mouseup(function(){
-    // $(document).on('change','.rotateDeg', function(){
     // 1 stand for clockwise
     // 0 stand for Anticlockwise
     var open = $(this).data("isopen");
     if(open) {
-        // alert(1);
-    
-    
-
     if($(this).val() == 'null'){
       return false;
     }
@@ -100,5 +132,9 @@ $(function() {
       console.log("clockAntiClock ",clockAntiClock , 'angle ', angle, itemToRotate);
       $(itemToRotate).css({'transform':'rotate('+angle+'deg)', 'transition':'0.5s'});
   }
+
+  $("#reset").click(function(){
+    location.reload();
+  })
 
 });   // end document function 
