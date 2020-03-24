@@ -1,10 +1,24 @@
 * {margin: 0px;padding: 0px;}
+ /* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+ Hide scrollbar for IE and Edge 
+.example {
+  -ms-overflow-style: none;
+} 
+
+
+
 body {
   padding:50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
  .dropWrapper{
@@ -19,22 +33,22 @@ body {
   max-width: 1200px;
   display: flex;
 }
-
+.drag:hover{cursor:pointer;}
 .drag{width:max-content; /*background: #ddd; */}
 .drag li{
   background-image: url('../img/blue.png');
 }
-.drop {  background-image: url('../img/orange.png');}
-li.disabled{  background-image: url('../img/black.png');}
+.drop {  background-image: url('../img/black.png');}
+li.disabled{  background-image: url('../img/blue.png');}
 .drag div{ display: flex; justify-content: center;}
-li{list-style: none; height: 50px; width: 50px;outline:1px solid #999;}
+li{list-style: none; height: 50px; width: 50px;outline:1px solid #999; background-size: 100% 100%;}
 .drag .lShapeLast{
+  justify-content: flex-start;
+}.drag .lShapeFirst{
   justify-content: flex-start;
 }
 
-.ui-droppable-hover{
-	/*border-color:blue;*/
-}
+
 
 #squareShape{
  display: flex;
@@ -76,7 +90,7 @@ padding: 3px;
 border: 1px solid #004cff;
   }
 
-#tShape, #rectangleShape{
+#tShape, #rectangleShape, #lShape, #lineShape{
   height: 250px;
 }
 .dropWrapperContainer{
@@ -93,6 +107,7 @@ border: 1px solid #004cff;
     border-radius: 4px;
     margin-bottom: 30px;
     cursor:pointer;
+     font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -105,7 +120,115 @@ border: 1px solid #004cff;
     text-align: center;
     padding: 20px;
     margin-bottom: 30px;
-    font-family: 'Open Sans', sans-serif;
+    
     font-size: 28px;
     background-repeat: no-repeat;
+}
+.desc {
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+.wellDone{position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background: #e3e2e2b0;
+z-index: 999;
+display: flex;
+justify-content: center;
+align-items: center;
+display: none;
+
+}
+.wellDone .imgContainer{
+  display: flex;
+ align-items: center;
+  flex-direction: column;
+}
+.wellDone .imgContainer img{width: 400px;}
+.wellDone .imgContainer  button{ 
+    color: #fff;
+    background: #057db7;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    padding: 15px;
+    border-radius: 29px;
+    cursor: pointer;
+     font-family: 'Open Sans', sans-serif;
+}
+
+
+@media only screen and (max-width: 1500px) {
+  body{
+    padding:10px;
+  }
+  .header{
+    margin-bottom:15px;
+  }
+  #reset{
+    padding: 6px 15px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+li{width:40px; height:40px;}
+.dropWrapper {width:240px;
+    margin: 15px 30px;}
+.dragContainer{
+  width:240px; margin-bottom:0px;
+}
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .desc {
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+
+}
+
+@media only screen and (max-width: 960px) {
+
+.handleMotion select{width:90px;}
+#tShape, #rectangleShape, #lShape, #lineShape{
+  height: 200px;
+}
+.handleMotion{
+  margin-bottom:10px;
+}
+.header{
+  padding:10px;
+  font-size: 20px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+
+li{width:25px; height:25px;}
+.dropWrapper {width:150px;}
+.dragContainer{
+  width:150px;
+}
+.handleMotion select{    width: 70px;
+    font-size: 10px;}
+#tShape, #rectangleShape, #lShape, #lineShape{
+  height: 150px;
+}
+.handleMotion{
+  margin-bottom:5px;
+}
+.header{
+  padding:10px;
+  font-size: 20px;
+}
+#reset{
+  margin-bottom:10px;
+}
 }
